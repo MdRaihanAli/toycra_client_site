@@ -1,0 +1,53 @@
+.sliderImg{
+    height: 80vh;
+    width: 100%;
+}
+.carosel-text{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(235, 219, 219, 0.5), rgba(209, 122, 8, 0.589));
+    z-index: 9;
+}
+.carousel .thumbs-wrapper{
+    display: none;
+}
+.banerDiss{
+    background-color: rgba(41, 37, 37, 0.842);
+    border-radius: 8px;
+    padding: 8px;
+}
+
+.tomato_color{
+    color: tomato;
+}
+
+/*  Carocel area end  */
+
+/* formal section start */
+
+.icon{
+    font-size: 5rem;
+    color: tomato;
+}
+.card:hover .icon {
+    transition: .5s ease-in-out;
+    transform: translate(0, -1rem);
+}
+
+.galery_text{
+    height: 100%;
+    margin-top: auto;
+    display: none;
+}
+.main_card:hover .galery_text{
+    color: aliceblue;
+    padding: 10px;
+    text-align: center;
+    display: block;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.363);
+}
+
