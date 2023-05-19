@@ -7,7 +7,7 @@ function Categori1() {
 
 
   useEffect(() => {
-    fetch(`https://toycra-server-side-mdraihanali.vercel.app/categoris/sports`)
+    fetch(`https://toycra-server-side-mdraihanali.vercel.app/category/sports`)
       .then(res => res.json())
       .then(dat => {
         setCarCategori(dat)

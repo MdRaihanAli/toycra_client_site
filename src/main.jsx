@@ -11,6 +11,8 @@ import Main from './layput/Main.jsx';
 import Home from './pages/home/home/Home.jsx';
 import VeiwDetails from './pages/others/VeiwDetails';
 import AddToy from './pages/others/AddToy';
+import AllToy from './pages/others/AllToy';
+import Login from './pages/others/Login';
 
 
 const router = createBrowserRouter([
@@ -30,6 +32,14 @@ const router = createBrowserRouter([
       {
         path: 'addtoy',
         element: <AddToy></AddToy>
+      },
+      {
+        path: 'alltoy',
+        element: <AllToy></AllToy>
+      },
+      {
+        path: 'login',
+        element: <Login></Login>
       }
 
     ]

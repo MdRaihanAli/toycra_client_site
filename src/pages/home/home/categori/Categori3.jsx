@@ -8,7 +8,7 @@ function Categori3() {
 
 
   useEffect(() => {
-    fetch(`https://toycra-server-side-mdraihanali.vercel.app/categoris/regular`)
+    fetch(`https://toycra-server-side-mdraihanali.vercel.app/category/regular`)
       .then(res => res.json())
       .then(dat => {
         setCarCategori(dat)

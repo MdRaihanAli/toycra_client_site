@@ -21,22 +21,13 @@ function Navmenu() {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <NavLink className='nav-link' to='/'>Home</NavLink>
+            <NavLink className='nav-link active' to='/'>Home</NavLink>
             <NavLink className='nav-link' to='/addtoy'>Add Toy</NavLink>
-            <Nav.Link href="#action2">Link</Nav.Link>
-            <NavDropdown title="Link" id="navbarScrollingDropdown">
-              <NavDropdown.Item> <Link to='/login'>pptijfsdjfjf</Link></NavDropdown.Item>
-              <NavDropdown.Item href="#action4">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action5">
-                Something else here
-              </NavDropdown.Item>
-            </NavDropdown>
-            <Nav.Link href="#" disabled>
-              Link
-            </Nav.Link>
+            <NavLink className='nav-link' to='/alltoy'>All Toy</NavLink>
+            <NavLink className='nav-link' to='/login'>Log In</NavLink>
+            
+           
+           
           </Nav>
           <Form className="d-flex">
             <Form.Control
