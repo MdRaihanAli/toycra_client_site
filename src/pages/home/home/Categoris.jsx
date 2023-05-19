@@ -3,6 +3,7 @@ import 'react-tabs/style/react-tabs.css';
 
 import './Home.css'
 import Categori1 from './categori/Categori1';
+import Categori2 from './categori/Categori2';
 
 function Categoris() {
     return (
@@ -21,7 +22,7 @@ function Categoris() {
 
 
                 <TabPanel>
-                    <h2>Any content 2</h2>
+                    <Categori2></Categori2>
                 </TabPanel>
 
 

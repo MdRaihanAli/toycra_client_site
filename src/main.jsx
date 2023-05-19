@@ -9,6 +9,7 @@ import {
 } from "react-router-dom";
 import Main from './layput/Main.jsx';
 import Home from './pages/home/home/Home.jsx';
+import VeiwDetails from './pages/others/VeiwDetails';
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,11 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>
+      },
+      {
+        path:'viewdetails/:id',
+        element: <VeiwDetails></VeiwDetails>,
+        loader: ({params})=>fetch(`http://localhost:5000/viewdetails/${params.id}`)
       }
 
     ]
