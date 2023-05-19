@@ -2,6 +2,7 @@ import React from 'react'
 import Form from 'react-bootstrap/Form'
 import { FaGoogle } from "react-icons/fa";
 import { Link } from 'react-router-dom';
+import biman from '../../assets/biman.png'
 
 
 function Login() {
@@ -39,7 +40,11 @@ function Login() {
                                         </div>
                                     </Form>
                                 </div>
-                                <div className="col-6"></div>
+                                <div className="col-6">
+                                    <div>
+                                        <img className='w-100' src={biman} alt="" />
+                                    </div>
+                                </div>
                             </div>
                         </div>
 

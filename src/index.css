@@ -19,9 +19,9 @@ tbody tr td {
 }
 
 .login_contaienr{
-    margin-top: 52px;
+    margin-top: 2rem;
     border-radius: 10px;
-    padding: 3rem;
+    padding: 2rem 3rem;
     border: 2px solid rgb(243, 241, 238);
     background: linear-gradient(to bottom, rgba(202, 183, 183, 0.5), rgba(209, 122, 8, 0.685))
 }
