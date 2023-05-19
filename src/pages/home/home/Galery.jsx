@@ -5,7 +5,7 @@ import './Home.css'
 function Galery() {
     const [cardData, setCardData] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/galery')
+        fetch('https://toycra-server-side-mdraihanali.vercel.app/galery')
             .then(res => res.json())
             .then(data => setCardData(data))
     }, [])

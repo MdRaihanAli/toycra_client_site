@@ -22,6 +22,7 @@ function Navmenu() {
             navbarScroll
           >
             <NavLink className='nav-link' to='/'>Home</NavLink>
+            <NavLink className='nav-link' to='/addtoy'>Add Toy</NavLink>
             <Nav.Link href="#action2">Link</Nav.Link>
             <NavDropdown title="Link" id="navbarScrollingDropdown">
               <NavDropdown.Item> <Link to='/login'>pptijfsdjfjf</Link></NavDropdown.Item>

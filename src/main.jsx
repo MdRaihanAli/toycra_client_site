@@ -10,6 +10,8 @@ import {
 import Main from './layput/Main.jsx';
 import Home from './pages/home/home/Home.jsx';
 import VeiwDetails from './pages/others/VeiwDetails';
+import AddToy from './pages/others/AddToy';
+
 
 const router = createBrowserRouter([
   {
@@ -23,7 +25,11 @@ const router = createBrowserRouter([
       {
         path:'viewdetails/:id',
         element: <VeiwDetails></VeiwDetails>,
-        loader: ({params})=>fetch(`http://localhost:5000/viewdetails/${params.id}`)
+        loader: ({params})=>fetch(`https://toycra-server-side-mdraihanali.vercel.app/viewdetails/${params.id}`)
+      },
+      {
+        path: 'addtoy',
+        element: <AddToy></AddToy>
       }
 
     ]

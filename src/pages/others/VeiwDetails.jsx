@@ -7,7 +7,7 @@ function VeiwDetails() {
     const singleData = useLoaderData()
 
     useEffect(() => {
-        fetch(`http://localhost:5000/categoris/sports`)
+        fetch(`https://toycra-server-side-mdraihanali.vercel.app/categoris/sports`)
             .then(res => res.json())
             .then(dat => {
                 setCarCategori(dat)
