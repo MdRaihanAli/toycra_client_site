@@ -52,15 +52,39 @@ function MyToy() {
                 })
                     .then(res => res.json())
                     .then(dat => {
-                        // console.log(dat);
+                        
                     })
             }
         })
     }
 
-    const updateHandel = (id) => {
-        // <MyComponent></MyComponent>
-        console.log(id);
+    const updateHandel = (event) => {
+        event.preventDefault()
+        const form = event.target 
+        const id = form.id.value
+        const price = form.price.value
+        const quantity = form.quantity.value
+        const detail = form.detail.value
+        const updateUser={price, quantity, detail}
+        // console.log(id, price, quantity, detail);
+
+        fetch(`http://localhost:5000/update/${id}`,{
+            method: 'PATCH',
+            headers:{'content-type':'application/json'},
+            body: JSON.stringify(updateUser)
+        })
+        .then(res=>res.json())
+        .then(fol=>{
+            Swal.fire({
+                position: 'top-center',
+                icon: 'success',
+                title: 'Your Item Updated',
+                showConfirmButton: false,
+                timer: 1500
+              })
+            console.log(fol);
+            closeModal()
+        })
     }
     return (
         <div className="bg_color">
@@ -141,8 +165,10 @@ function MyToy() {
 
                                 />
                             </Form.Group>
+                            <input className='d-none' name='id' type="text" value={modalData?._id} />
                             <button  className='btn bg_tomato' type="submit ms-auto">Submit form</button>
                         </Form>
+                        
                     </Modal.Body>
                     
                 </Modal>
