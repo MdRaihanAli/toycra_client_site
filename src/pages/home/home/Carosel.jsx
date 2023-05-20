@@ -22,9 +22,9 @@ function Carosel() {
                   aria-label="Recipient's username"
                   aria-describedby="basic-addon2"
                 />
-                <Button variant="danger" id="button-addon2">
+                <button className='bg_tomato btn' id="button-addon2">
                   Subcribe
-                </Button>
+                </button>
 
               </InputGroup>
             </div>
@@ -45,9 +45,9 @@ function Carosel() {
                   aria-label="Recipient's username"
                   aria-describedby="basic-addon2"
                 />
-                <Button variant="danger" id="button-addon2">
+                <button className='bg_tomato btn' id="button-addon2">
                   Subcribe
-                </Button>
+                </button>
 
               </InputGroup>
             </div>
@@ -68,9 +68,9 @@ function Carosel() {
                   aria-label="Recipient's username"
                   aria-describedby="basic-addon2"
                 />
-                <Button variant="danger" id="button-addon2">
+                <button className='bg_tomato btn' id="button-addon2">
                   Subcribe
-                </Button>
+                </button>
 
               </InputGroup>
             </div>

@@ -6,11 +6,12 @@ import Categoris from './Categoris'
 
 function Home() {
   return (
-    <div>
+    <div className='bg_color'>
         <Carosel></Carosel>
         <ShopFormality></ShopFormality>
         <Galery></Galery>
         <Categoris></Categoris>
+        
     </div>
   )
 }

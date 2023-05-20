@@ -1,12 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Row from 'react-bootstrap/Row';
+import { AuthContext } from '../../authprovidr/Authprovider';
 
 
 function AddToy() {
+    const {user}=useContext(AuthContext)
 
     const handleSubmit = (event) => {
         event.preventDefault()
@@ -21,14 +23,14 @@ function AddToy() {
         const category = form.category.value
         const photo = form.photo.value
 
-        const user = {
+        const users = {
             title, name, email, price, rating, quantity, detail, category, photo
         }
 
         fetch('https://toycra-server-side-mdraihanali.vercel.app/addtoy', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
-            body: JSON.stringify(user)
+            body: JSON.stringify(users)
         })
             .then(res => res.json())
             .then(data => {
@@ -48,29 +50,32 @@ function AddToy() {
                             <Form.Group as={Col} md="4" controlId="validationFormik01">
                                 <Form.Label>Toy Name</Form.Label>
                                 <Form.Control
+                                required
                                     type="text"
                                     name="title"
                                     placeholder='Give a toy name'
 
                                 />
-                                <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+                                
                             </Form.Group>
                             <Form.Group as={Col} md="4" controlId="validationFormik02">
                                 <Form.Label>Seler Name</Form.Label>
                                 <Form.Control
+                                    defaultValue={user?.displayName}
                                     type="text"
                                     name="name"
                                     placeholder='Name'
 
                                 />
 
-                                <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+                                
                             </Form.Group>
                             <Form.Group as={Col} md="4" controlId="validationFormikUsername">
                                 <Form.Label>Email</Form.Label>
                                 <InputGroup hasValidation>
                                     <InputGroup.Text id="inputGroupPrepend">@</InputGroup.Text>
                                     <Form.Control
+                                        value={user?.email}
                                         type="email"
                                         placeholder="Enter a email"
                                         aria-describedby="inputGroupPrepend"
