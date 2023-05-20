@@ -6,6 +6,8 @@ import biman from '../../assets/biman.png'
 
 
 function Login() {
+
+
     const handelLogin =(event)=>{
         event.preventDefault()
         const form = event.target
@@ -22,7 +24,7 @@ function Login() {
                         <div className="login_contaienr">
                             <div className="row">
                                 <div className="col-6">
-                                    <h3 className="card-title text-light text-center">Login</h3>
+                                    <h2 className="card-title text-light text-center">Login</h2>
                                     <Form onSubmit={handelLogin}>
                                         <Form.Group className="mb-2" >
                                             <Form.Label>Email address</Form.Label>
@@ -30,7 +32,7 @@ function Login() {
                                         </Form.Group>
                                         <Form.Group className="mb-3" >
                                             <Form.Label>Password</Form.Label>
-                                            <Form.Control name='password' type="password" />
+                                            <Form.Control name='password' placeholder='Password' type="password" />
                                         </Form.Group>
                                         <Form.Group className="mb-3" >
                                         <div>
