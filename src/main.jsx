@@ -13,6 +13,7 @@ import VeiwDetails from './pages/others/VeiwDetails';
 import AddToy from './pages/others/AddToy';
 import AllToy from './pages/others/AllToy';
 import Login from './pages/others/Login';
+import Authprovider from './authprovidr/Authprovider';
 
 
 const router = createBrowserRouter([
@@ -25,9 +26,9 @@ const router = createBrowserRouter([
         element: <Home></Home>
       },
       {
-        path:'viewdetails/:id',
+        path: 'viewdetails/:id',
         element: <VeiwDetails></VeiwDetails>,
-        loader: ({params})=>fetch(`https://toycra-server-side-mdraihanali.vercel.app/viewdetails/${params.id}`)
+        loader: ({ params }) => fetch(`https://toycra-server-side-mdraihanali.vercel.app/viewdetails/${params.id}`)
       },
       {
         path: 'addtoy',
@@ -48,6 +49,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <Authprovider>
+      <RouterProvider router={router} />
+    </Authprovider>
   </React.StrictMode>,
 )

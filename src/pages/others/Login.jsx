@@ -6,6 +6,13 @@ import biman from '../../assets/biman.png'
 
 
 function Login() {
+    const handelLogin =(event)=>{
+        event.preventDefault()
+        const form = event.target
+        const name = form.email.value
+        const password = form.password.value
+        console.log(name, password);
+    }
     return (
         <div className='bg_image' >
             <div className="bg_color">
@@ -16,14 +23,14 @@ function Login() {
                             <div className="row">
                                 <div className="col-6">
                                     <h3 className="card-title text-light text-center">Login</h3>
-                                    <Form>
+                                    <Form onSubmit={handelLogin}>
                                         <Form.Group className="mb-2" >
                                             <Form.Label>Email address</Form.Label>
-                                            <Form.Control type="email" placeholder="name@example.com" />
+                                            <Form.Control name='email' type="email" placeholder="name@example.com" />
                                         </Form.Group>
                                         <Form.Group className="mb-3" >
                                             <Form.Label>Password</Form.Label>
-                                            <Form.Control type="password" />
+                                            <Form.Control name='password' type="password" />
                                         </Form.Group>
                                         <Form.Group className="mb-3" >
                                         <div>

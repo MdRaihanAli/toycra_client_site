@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 function AllToy() {
     const [toy, setToy] = useState([])
     useEffect(() => {
-        fetch('https://toycra-server-side-mdraihanali.vercel.app/galery')
+        fetch('http://localhost:5000/galery')
             .then(res => res.json())
             .then(data => {
                 setToy(data)
