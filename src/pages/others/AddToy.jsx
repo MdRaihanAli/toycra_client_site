@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import Button from 'react-bootstrap/Button';
+import Swal from 'sweetalert2';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
@@ -35,13 +35,19 @@ function AddToy() {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                Swal.fire({
+                    position: 'top-center',
+                    icon: 'success',
+                    title: 'Your toy added',
+                    showConfirmButton: false,
+                    timer: 1500
+                  })
             })
     }
 
     const [toy, setToy] = useState([])
     useEffect(() => {
-        fetch(`http://localhost:5000/singleuser/${user?.email}`)
+        fetch(`https://toycra-server-side-mdraihanali.vercel.app/singleuser/${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setToy(data)
