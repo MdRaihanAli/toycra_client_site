@@ -46,3 +46,21 @@ tbody tr td {
 .bg_tomato{
     background-color: tomato;
 }
+
+.midea{
+    color: aliceblue;
+    font-size: 2rem;
+}
+.facebook{
+    margin-right: 10pz;
+}
+.messenger{
+    margin: 0 15px;
+}
+.insta{
+    margin-right: 15px;
+    color: #fa7e1e;
+}
+.youtube{
+    color: #FF0000;
+}
