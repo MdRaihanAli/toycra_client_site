@@ -3,11 +3,22 @@ import Table from 'react-bootstrap/Table';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../../authprovidr/Authprovider';
-// import withReactContent from 'sweetalert2-react-content'
+import { Button, Col, Form, Modal, Row } from 'react-bootstrap';
 
 function MyToy() {
-    const {user}= useContext(AuthContext)
+    const { user } = useContext(AuthContext)
     console.log(user?.email);
+    const [modalData, setModalData] = useState(null);
+
+    const openModal = (data) => {
+        setModalData(data);
+    };
+    const closeModal = () => {
+        setModalData(null);
+    };
+
+
+
 
     const [toy, setToy] = useState([])
     useEffect(() => {
@@ -36,27 +47,20 @@ function MyToy() {
                     'Your file has been deleted.',
                     'success'
                 )
-
-
                 fetch(`http://localhost:5000/delete/${id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
                     .then(dat => {
-                        console.log(dat);
+                        // console.log(dat);
                     })
-
-
-
-
-
             }
         })
+    }
 
-
-
-
-
+    const updateHandel = (id) => {
+        // <MyComponent></MyComponent>
+        console.log(id);
     }
     return (
         <div className="bg_color">
@@ -87,13 +91,64 @@ function MyToy() {
                                 <td>{x.category}</td>
                                 <td>{x.price}</td>
                                 <td>{x.quantity}</td>
-                                <td> <Link to={`/viewdetails/${x._id}`} className='btn btn-secondary'>Details</Link></td>
+                                <td> <button onClick={() => openModal(x)} className='btn btn-secondary'>Edite</button></td>
                                 <td> <button onClick={() => handelDelete(x._id)} className='btn btn-secondary'>Delete</button></td>
                             </tr>)
                         }
                     </tbody>
                 </Table>
             </div>
+
+
+            <div>
+                <Modal show={modalData !== null} onHide={closeModal}>
+                    <Modal.Header closeButton>
+                        <Modal.Title>Update This Item</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+
+                        <Form onSubmit={updateHandel}>
+                            <Row className="mb-3">
+                                <Form.Group as={Col} md="6" controlId="validationFormik03">
+                                    <Form.Label>Price</Form.Label>
+                                    <Form.Control
+                                        type="number"
+                                        placeholder="Price"
+                                        name="price"
+                                        defaultValue={modalData?.price}
+                                    />
+                                </Form.Group>
+
+                                <Form.Group as={Col} md="6" controlId="validationFormik05">
+                                    <Form.Label>Quantity</Form.Label>
+                                    <Form.Control
+                                        type="number"
+                                        placeholder="Quantity"
+                                        name="quantity"
+                                        defaultValue={modalData?.quantity}
+
+                                    />
+
+                                </Form.Group>
+                            </Row>
+                            <Form.Group as={Col} md="12" className="mb-3">
+                                <Form.Label>Details</Form.Label>
+                                <Form.Control
+                                    name="detail"
+                                    as="textarea"
+                                    rows={2}
+                                    defaultValue={modalData?.detail}
+
+                                />
+                            </Form.Group>
+                            <button  className='btn bg_tomato' type="submit ms-auto">Submit form</button>
+                        </Form>
+                    </Modal.Body>
+                    
+                </Modal>
+            </div>
+
+
         </div>
     )
 }
