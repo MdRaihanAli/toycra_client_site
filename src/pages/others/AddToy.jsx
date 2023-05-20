@@ -157,7 +157,7 @@ function AddToy() {
                                 <Form.Group md="3" as={Col} className="mb-3">
                                     <Form.Label>Select Categoris</Form.Label>
                                     <Form.Select name='category' aria-label="Default select example">
-                                        <option value="Sports">Sports</option>
+                                        <option value="sports">Sports</option>
                                         <option value="truck">Truck</option>
                                         <option value="regular">Regular</option>
                                     </Form.Select>
