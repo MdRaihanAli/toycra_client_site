@@ -15,7 +15,7 @@ function AddToy() {
         event.preventDefault()
         const form = event.target
         const title = form.title.value
-        const name = form.name.value
+        const seler = form.name.value
         const email = form.email.value
         const price = form.price.value
         const rating = form.rating.value
@@ -25,7 +25,7 @@ function AddToy() {
         const photo = form.photo.value
 
         const users = {
-            title, name, email, price, rating, quantity, detail, category, photo
+            title, seler, email, price, rating, quantity, detail, category, photo
         }
 
         fetch('https://toycra-server-side-mdraihanali.vercel.app/addtoy', {

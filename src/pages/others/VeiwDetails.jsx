@@ -31,7 +31,10 @@ function VeiwDetails() {
                             <div className="col-4">
                                 <h4 className="card-title">{singleData.title}</h4>
                                 <h5 className='mt-2'>Seler's : <span className="tomato_color">{singleData.seler}</span></h5>
+                                <div> Seler's Email : {singleData.email}</div>
                                 <hr />
+                                <h6>Price: <span className=''>{singleData.price}</span></h6>
+                                <h6>Quantity: <span className=''>{singleData.quantity}</span></h6>
                                 <h6>Raring: <span className=''>{singleData.rating}</span></h6>
                                 <hr />
                                 <p>{singleData.detail}</p>
@@ -53,6 +56,7 @@ function VeiwDetails() {
                                         </div>
                                         <div className="col-7">
                                             <h5 className="card-title">{data.title}</h5>
+                                            
                                             <span>{data.rating}</span>
                                             <p> price : ${data.price}</p>
                                             <div className='text-end'>

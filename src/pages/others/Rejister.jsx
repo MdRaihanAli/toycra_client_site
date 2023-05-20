@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import Form from 'react-bootstrap/Form'
 import { FaGoogle } from "react-icons/fa";
 import { Link,  useLocation, useNavigate } from 'react-router-dom';
@@ -9,6 +9,7 @@ import { updateProfile } from 'firebase/auth';
 
 
 function Rejister() {
+    const [errorM, setError]=useState('')
 const {rejister, nameudater, auth}=useContext(AuthContext)
 const location = useLocation()
 const navigate = useNavigate()
@@ -18,11 +19,19 @@ const from = location.state?.from?.pathname || '/';
 
     const handelLogin =(event)=>{
         event.preventDefault()
+        setError('')
         const form = event.target
         const name = form.name.value
         const photo = form.photo.value
         const email = form.email.value
         const password = form.password.value
+
+        if (password.length<6) {
+            setError('passwort miniman 6 charecter')
+        }
+        if (name=="" || email=="") {
+            setError('please inpun fild')
+        }
         
         rejister(email, password)
         .then(res=>{
@@ -47,6 +56,7 @@ const from = location.state?.from?.pathname || '/';
                             <div className="row">
                                 <div className="col-6">
                                     <h2 className="card-title mb-3 text-light text-center">Rejister</h2>
+                                    <span className='text-danger'>{errorM}</span>
                                     <Form onSubmit={handelLogin}>
                                         <Form.Group className="mb-2" >
                                             {/* <Form.Label>Your Name</Form.Label> */}

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import Form from 'react-bootstrap/Form'
 import { FaGoogle } from "react-icons/fa";
 import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
@@ -7,6 +7,7 @@ import { AuthContext } from '../../authprovidr/Authprovider';
 
 
 function Login() {
+    const [errorM, setError]=useState('')
 const {googleLogin, login}=useContext(AuthContext)
 const location = useLocation()
 const navigate = useNavigate()
@@ -28,9 +29,19 @@ const handeGoole =()=>{
 
     const handelLogin =(event)=>{
         event.preventDefault()
+        
         const form = event.target
         const email = form.email.value
         const password = form.password.value
+
+        if (password.length<6) {
+            setError('passwort miniman 6 charecter')
+        }
+        if (email=="") {
+            setError('please inpun email')
+        }
+
+
         login(email, password)
         .then(res=>{
             navigate(from, {repls: true})
@@ -47,6 +58,7 @@ const handeGoole =()=>{
                             <div className="row">
                                 <div className="col-6">
                                     <h2 className="card-title text-light text-center">Login</h2>
+                                    <span className='text-danger'>{errorM}</span>
                                     <Form onSubmit={handelLogin}>
                                         <Form.Group className="mb-2" >
                                             <Form.Label>Email address</Form.Label>
