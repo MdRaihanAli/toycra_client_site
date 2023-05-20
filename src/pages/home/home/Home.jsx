@@ -4,6 +4,7 @@ import ShopFormality from './ShopFormality'
 import Galery from './Galery'
 import Categoris from './Categoris'
 import ExtraSection from './ExtraSection'
+import Footer from '../../sheare/Footer'
 
 function Home() {
   return (
@@ -13,6 +14,7 @@ function Home() {
         <Galery></Galery>
         <Categoris></Categoris>
         <ExtraSection></ExtraSection>
+        <Footer></Footer>
         
     </div>
   )

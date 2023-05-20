@@ -9,7 +9,7 @@ function ExtraSection() {
                 <div className="container">
                     <div className="row align-items-center">
 
-                        <div className="login_home_contaienr mt-lg-5 mt-md-3">
+                        <div className="login_home_contaienr mt-lg-5 mt-md-3 mt-2">
                             <div className="row">
                                 <div className="col-md-6">
                                     <h2 className="card-title text-light text-center">You can trust us!!</h2>
