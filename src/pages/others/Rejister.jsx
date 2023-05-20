@@ -71,7 +71,7 @@ const from = location.state?.from?.pathname || '/';
                                         </Form.Group>
                                         
                                         <p>
-                                            <Link to='/login' className='text-light '>I have a  <span className="fw-bold">account !</span></Link>
+                                            <Link to='/login' className='text-light '>I Have An  <span className="fw-bold">Account !</span></Link>
                                         </p>
                                         
                                     </Form>

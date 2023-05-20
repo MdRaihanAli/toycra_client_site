@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import { AuthContext } from '../authprovidr/Authprovider'
 import { Navigate, useLocation } from 'react-router-dom'
 import Spinner from 'react-bootstrap/Spinner';
+import Swal from 'sweetalert2';
 
 function PrivetRoute({ children }) {
     const { user, loding } = useContext(AuthContext)
@@ -12,7 +13,17 @@ function PrivetRoute({ children }) {
     if (user) {
         return children
     }
-   return <Navigate to='/login' state={{from : location}}  replace></Navigate>
+    if (!user) {
+        Swal.fire({
+            position: 'top-center',
+            icon: 'error',
+            title: 'You Have to Log In first',
+            showConfirmButton: false,
+            timer: 1500
+          })
+        return <Navigate to='/login' state={{from : location}}  replace></Navigate>
+    }
+    
 }
 
 export default PrivetRoute

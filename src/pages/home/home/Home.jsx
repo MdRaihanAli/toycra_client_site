@@ -14,7 +14,7 @@ function Home() {
         <Galery></Galery>
         <Categoris></Categoris>
         <ExtraSection></ExtraSection>
-        <Footer></Footer>
+      
         
     </div>
   )

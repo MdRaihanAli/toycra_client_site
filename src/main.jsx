@@ -17,6 +17,7 @@ import Authprovider from './authprovidr/Authprovider';
 import MyToy from './pages/others/MyToy';
 import PrivetRoute from './privetRoute/PrivetRoute';
 import Rejister from './pages/others/Rejister';
+import ErrorPase from './pages/sheare/ErrorPase';
 
 
 const router = createBrowserRouter([
@@ -30,7 +31,7 @@ const router = createBrowserRouter([
       },
       {
         path: 'viewdetails/:id',
-        element: <VeiwDetails></VeiwDetails>,
+        element: <PrivetRoute><VeiwDetails></VeiwDetails></PrivetRoute>,
         loader: ({ params }) => fetch(`https://toycra-server-side-mdraihanali.vercel.app/viewdetails/${params.id}`)
       },
       {
@@ -52,10 +53,19 @@ const router = createBrowserRouter([
       {
         path: 'mytoy',
         element: <PrivetRoute><MyToy></MyToy></PrivetRoute>
-      }
+      },
+      // {
+      //   path:'*',
+      //   element:<ErrorPase></ErrorPase>
+      // }
+      
 
     ]
   },
+  {
+    path:'*',
+    element:<ErrorPase></ErrorPase>
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(

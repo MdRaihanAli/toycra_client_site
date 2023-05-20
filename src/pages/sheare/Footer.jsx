@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { FaFacebookSquare, FaFacebookMessenger, FaInstagramSquare, FaYoutubeSquare } from "react-icons/fa";
+import logo from '../../assets/logo.webp'
 
 function Footer() {
     return (
@@ -9,7 +10,8 @@ function Footer() {
                 <div className="container">
                     <div className="row g-md-4">
                         <div className="col-md-6 col-lg-3">
-                            <h3 className='text-bold'>Reach Us</h3>
+                            <div><img width='120' src={logo} alt="" /></div>
+                            
                             <hr />
                             <div><Link className='nav-link'>About Us</Link></div>
                             <div><Link className='nav-link'>Contact Us</Link></div>
@@ -48,7 +50,7 @@ function Footer() {
                     </div>
                 </div>
             </div>
-            <p>Copyright © 2023 Toycra.</p>
+            <p className='text-center'>Copyright © 2023 Toycra.</p>
         </div>
     )
 }

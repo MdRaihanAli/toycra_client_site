@@ -63,7 +63,7 @@ const handeGoole =()=>{
                                         </Form.Group>
                                         
                                         <p>
-                                            <Link to='/rejister' className='text-light '>I am  <span className="fw-bold">new !</span></Link>
+                                            <Link to='/rejister' className='text-light '>Are You New <span className="fw-bold">Click Here!</span></Link>
                                         </p>
                                         <div>
                                             <button onClick={handeGoole} className='btn btn-light'> <FaGoogle /> Log In</button>

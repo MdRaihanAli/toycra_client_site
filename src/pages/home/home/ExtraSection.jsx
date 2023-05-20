@@ -12,7 +12,7 @@ function ExtraSection() {
                         <div className="login_home_contaienr mt-lg-5 mt-md-3 mt-2">
                             <div className="row">
                                 <div className="col-md-6">
-                                    <h2 className="card-title text-light text-center">You can trust us!!</h2>
+                                    <h2 className="card-title text-light text-center mb-2">You can trust us!!</h2>
                                     <p>
                                         statement that implies the speaker or the group they represent is trustworthy. However, trust is something that is built over time through consistent and reliable actions. Without any specific <span className="d-md-block d-none">context or supporting information, it is difficult to determine the credibility or trustworthiness of the speaker or group making the statement. Trust is typically established through a combination of factors, such as honesty,
                                         </span>
