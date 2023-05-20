@@ -12,7 +12,7 @@ function AllToy() {
             })
     }, [])
     return (
-        <div className="bg_color">
+        <div className="bg_color pb-4">
             <h3 className="text-bold text-center py-4"> All <span className="tomato_color">Toys</span></h3>
             <div className='container'>
 

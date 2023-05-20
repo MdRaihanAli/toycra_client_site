@@ -16,6 +16,7 @@ import Login from './pages/others/Login';
 import Authprovider from './authprovidr/Authprovider';
 import MyToy from './pages/others/MyToy';
 import PrivetRoute from './privetRoute/PrivetRoute';
+import Rejister from './pages/others/Rejister';
 
 
 const router = createBrowserRouter([
@@ -43,6 +44,10 @@ const router = createBrowserRouter([
       {
         path: 'login',
         element: <Login></Login>
+      },
+      {
+        path: 'rejister',
+        element: <Rejister></Rejister>
       },
       {
         path: 'mytoy',

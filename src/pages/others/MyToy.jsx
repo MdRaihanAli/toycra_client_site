@@ -7,7 +7,7 @@ import { Button, Col, Form, Modal, Row } from 'react-bootstrap';
 
 function MyToy() {
     const { user } = useContext(AuthContext)
-    console.log(user?.email);
+    // console.log(user?.email);
     const [modalData, setModalData] = useState(null);
 
     const openModal = (data) => {
@@ -22,7 +22,7 @@ function MyToy() {
 
     const [toy, setToy] = useState([])
     useEffect(() => {
-        fetch(`http://localhost:5000/singleuser/${user?.email}`)
+        fetch(`https://toycra-server-side-mdraihanali.vercel.app/singleuser/${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setToy(data)
@@ -47,7 +47,7 @@ function MyToy() {
                     'Your file has been deleted.',
                     'success'
                 )
-                fetch(`http://localhost:5000/delete/${id}`, {
+                fetch(`https://toycra-server-side-mdraihanali.vercel.app/delete/${id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -68,7 +68,7 @@ function MyToy() {
         const updateUser={price, quantity, detail}
         // console.log(id, price, quantity, detail);
 
-        fetch(`http://localhost:5000/update/${id}`,{
+        fetch(`https://toycra-server-side-mdraihanali.vercel.app/update/${id}`,{
             method: 'PATCH',
             headers:{'content-type':'application/json'},
             body: JSON.stringify(updateUser)
@@ -87,7 +87,7 @@ function MyToy() {
         })
     }
     return (
-        <div className="bg_color">
+        <div className="bg_color pb-4">
             <h3 className="text-bold text-center py-4"> My <span className="tomato_color">Toys</span></h3>
             <div className='container'>
 
