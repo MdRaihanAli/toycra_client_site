@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
@@ -8,8 +8,15 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 
 import logo from '../../../assets/logo.webp'
 import { Link, NavLink } from 'react-router-dom';
+import { AuthContext } from '../../../authprovidr/Authprovider';
 
 function Navmenu() {
+  const {user, logout}=useContext(AuthContext)
+
+  const handelLogot =()=>{
+    logout().then(res=>{}).then(data=>{console.log(data)})
+  }
+
   return (
     <Navbar bg="light" expand="lg">
       <Container>
@@ -24,20 +31,19 @@ function Navmenu() {
             <NavLink className='nav-link active' to='/'>Home</NavLink>
             <NavLink className='nav-link' to='/addtoy'>Add Toy</NavLink>
             <NavLink className='nav-link' to='/alltoy'>All Toy</NavLink>
-            <NavLink className='nav-link' to='/login'>Log In</NavLink>
+            
             
            
            
           </Nav>
-          <Form className="d-flex">
-            <Form.Control
-              type="search"
-              placeholder="Search"
-              className="me-2"
-              aria-label="Search"
-            />
-            <Button variant="outline-success">Search</Button>
-          </Form>
+          <div className="d-flex"> 
+          {
+            user ? <button onClick={handelLogot} className='btn bg_tomato'>Log Out</button> : <NavLink className='nav-link' to='/login'><button  className='btn bg_tomato'>Login</button></NavLink> 
+          }
+          
+          
+            
+          </div>
         </Navbar.Collapse>
       </Container>
     </Navbar>

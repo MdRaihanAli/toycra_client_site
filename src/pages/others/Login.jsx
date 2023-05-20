@@ -1,11 +1,22 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Form from 'react-bootstrap/Form'
 import { FaGoogle } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import biman from '../../assets/biman.png'
+import { AuthContext } from '../../authprovidr/Authprovider';
 
 
 function Login() {
+const {googleLogin}=useContext(AuthContext)
+
+const handeGoole =()=>{
+    googleLogin()
+        .then(res=>{})
+        .catch(data=>{
+            console.log(data);
+        }
+    )
+}
 
 
     const handelLogin =(event)=>{
@@ -44,7 +55,7 @@ function Login() {
                                             <Link className='text-light '>I have a  <span className="fw-bold">account !</span></Link>
                                         </p>
                                         <div>
-                                            <button className='btn btn-light'> <FaGoogle /> Log In</button>
+                                            <button onClick={handeGoole} className='btn btn-light'> <FaGoogle /> Log In</button>
                                             
                                         </div>
                                     </Form>
