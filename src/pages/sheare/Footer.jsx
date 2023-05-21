@@ -11,7 +11,6 @@ function Footer() {
                     <div className="row g-md-4">
                         <div className="col-md-6 col-lg-3" data-aos="fade-left">
                             <div><img width='120' src={logo} alt="" /></div>
-                            
                             <hr />
                             <div><Link className='nav-link'>About Us</Link></div>
                             <div><Link className='nav-link'>Contact Us</Link></div>

@@ -3,13 +3,21 @@ import Table from 'react-bootstrap/Table';
 import { Link } from 'react-router-dom';
 
 function AllToy() {
+    const [toy, setToy] = useState([])
+    const [searchN, setSearchN]=useState('')
+
+    const serchHandelar =(text)=>{
+        fetch(`http://localhost:5000/toysearch/${text}`)
+        .then(res=>res.json())
+        .then(x=>setToy(x))
+    }
 
     const handelTitle=()=>{
         document.title = 'All-Toy--Toycra'
     }
     handelTitle()
 
-    const [toy, setToy] = useState([])
+    
     useEffect(() => {
         fetch('https://toycra-server-side-mdraihanali.vercel.app/alltoy')
             .then(res => res.json())
@@ -20,14 +28,15 @@ function AllToy() {
     return (
         <div className="bg_color pb-4">
             <h3 className="text-bold text-center py-4"> All <span className="tomato_color">Toys</span></h3>
+            
             <div className='container'>
-
+            
                 <Table striped bordered hover responsive="sm">
                     <thead>
                         <tr>
                             <th>#</th>
                             <th>Imaige</th>
-                            <th>Toy Name</th>
+                            <th><input onChange={(e)=>serchHandelar(e.target.value)} placeholder='Search Toy Name' className='form-control' type="text" /></th>
                             <th>Sheler Name</th>
                             <th>Sub-category</th>
                             <th>Price</th>

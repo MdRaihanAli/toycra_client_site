@@ -70,3 +70,16 @@ tbody tr td {
     width: 100%;
     height: 100vh;
 }
+
+
+.active{
+    color: red;
+}
+
+.test{
+    color: tomato;
+    font-size: medium;
+    font-weight: bold;
+    text-decoration: none;
+    margin-right: 15px;
+}

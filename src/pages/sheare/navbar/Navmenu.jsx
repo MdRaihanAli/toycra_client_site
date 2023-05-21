@@ -27,16 +27,16 @@ function Navmenu() {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <NavLink className='nav-link active' to='/'>Home</NavLink>
+            <NavLink className='test' to='/'> <span className="text-bold">Home</span></NavLink>
             {
               user ? <>
-                <NavLink className='nav-link' to='/addtoy'>Add A Toy</NavLink>
-                <NavLink className='nav-link' to='/mytoy'>My Toy</NavLink>
+                <NavLink className='test' to='/addtoy'>Add A Toy</NavLink>
+                <NavLink className='test' to='/mytoy'>My Toy</NavLink>
               </>:""
             }
 
-            <NavLink className='nav-link' to='/alltoy'>All Toy</NavLink>
-            <NavLink className='nav-link' to='/blogs'>Blogs</NavLink>
+            <NavLink className='test' to='/alltoy'>All Toy</NavLink>
+            <NavLink className='test' to='/blogs'>Blogs</NavLink>
 
 
 
