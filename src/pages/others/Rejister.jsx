@@ -10,7 +10,7 @@ import { updateProfile } from 'firebase/auth';
 
 function Rejister() {
     const [errorM, setError]=useState('')
-const {rejister, nameudater, auth}=useContext(AuthContext)
+const {rejister}=useContext(AuthContext)
 const location = useLocation()
 const navigate = useNavigate()
 
@@ -41,6 +41,7 @@ const from = location.state?.from?.pathname || '/';
             })
             .then(ress=>{console.log(ress)})
             .catch(errr=>console.log(errr))
+            navigate(from, {replace:true})
         })
         .catch(err=>{console.log(err)})
 

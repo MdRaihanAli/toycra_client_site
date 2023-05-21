@@ -7,7 +7,7 @@ import { Button, Col, Form, Modal, Row } from 'react-bootstrap';
 
 function MyToy() {
     const { user } = useContext(AuthContext)
-    // console.log(user?.email);
+    const [toy, setToy] = useState([])
     const [modalData, setModalData] = useState(null);
 
     const openModal = (data) => {
@@ -20,7 +20,7 @@ function MyToy() {
 
 
 
-    const [toy, setToy] = useState([])
+    
     useEffect(() => {
         fetch(`https://toycra-server-side-mdraihanali.vercel.app/singleuser/${user?.email}`)
             .then(res => res.json())
@@ -52,7 +52,8 @@ function MyToy() {
                 })
                     .then(res => res.json())
                     .then(dat => {
-                        
+                        const filterToy = toy.filter(y=>y._id !== id)
+                        setToy(filterToy)
                     })
             }
         })
