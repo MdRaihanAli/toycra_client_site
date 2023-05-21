@@ -8,7 +8,15 @@ import { AuthContext } from '../../authprovidr/Authprovider';
 import { Link } from 'react-router-dom';
 
 
+
+
 function AddToy() {
+
+    const handelTitle=()=>{
+        document.title = 'AddToy--Toycra'
+    }
+    handelTitle()
+
     const { user } = useContext(AuthContext)
 
     const handleSubmit = (event) => {

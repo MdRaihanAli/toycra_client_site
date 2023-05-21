@@ -9,6 +9,11 @@ import { updateProfile } from 'firebase/auth';
 
 
 function Rejister() {
+    const handelTitle=()=>{
+        document.title = 'SignUp--Toycra'
+    }
+    handelTitle()
+
     const [errorM, setError]=useState('')
 const {rejister}=useContext(AuthContext)
 const location = useLocation()
@@ -56,7 +61,7 @@ const from = location.state?.from?.pathname || '/';
                         <div className="login_contaienr">
                             <div className="row">
                                 <div className="col-6">
-                                    <h2 className="card-title mb-3 text-light text-center">Rejister</h2>
+                                    <h2 className="card-title mb-3 text-light text-center">SignUp</h2>
                                     <span className='text-danger'>{errorM}</span>
                                     <Form onSubmit={handelLogin}>
                                         <Form.Group className="mb-2" >
@@ -77,7 +82,7 @@ const from = location.state?.from?.pathname || '/';
                                         </Form.Group>
                                         <Form.Group className="mb-3" >
                                         <div>
-                                            <input className='w-100 btn-light btn' type="submit" value='Rejister' />
+                                            <input className='w-100 btn-light btn' type="submit" value='SignUp' />
                                         </div>
                                         </Form.Group>
                                         

@@ -3,6 +3,10 @@ import Card from 'react-bootstrap/Card'
 import { Link, useLoaderData } from 'react-router-dom'
 
 function VeiwDetails() {
+    const handelTitle=()=>{
+        document.title = 'View-Details--Toycra'
+    }
+    handelTitle()
     const [carCategori, setCarCategori] = useState([])
     const singleData = useLoaderData()
 

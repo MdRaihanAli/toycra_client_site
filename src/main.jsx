@@ -18,6 +18,7 @@ import MyToy from './pages/others/MyToy';
 import PrivetRoute from './privetRoute/PrivetRoute';
 import Rejister from './pages/others/Rejister';
 import ErrorPase from './pages/sheare/ErrorPase';
+import Blogs from './pages/others/Blogs';
 
 
 const router = createBrowserRouter([
@@ -54,10 +55,10 @@ const router = createBrowserRouter([
         path: 'mytoy',
         element: <PrivetRoute><MyToy></MyToy></PrivetRoute>
       },
-      // {
-      //   path:'*',
-      //   element:<ErrorPase></ErrorPase>
-      // }
+      {
+        path:'blogs',
+        element:<Blogs></Blogs>
+      }
       
 
     ]

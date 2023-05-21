@@ -7,6 +7,10 @@ import ExtraSection from './ExtraSection'
 import Footer from '../../sheare/Footer'
 
 function Home() {
+  const handelTitle=()=>{
+    document.title = 'Home Page--Toycra'
+}
+handelTitle()
   return (
     <div className='bg_color'>
         <Carosel></Carosel>

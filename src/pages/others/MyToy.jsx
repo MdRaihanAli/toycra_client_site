@@ -16,7 +16,10 @@ function MyToy() {
         setModalData(null);
     };
 
-
+const handelTitle=()=>{
+    document.title = 'MyToy--Toycra'
+}
+handelTitle()
 
 
 
@@ -89,7 +92,7 @@ function MyToy() {
 
     const handelSort = (event) => {
         const sortValu = event.target.value
-        fetch(`http://localhost:5000/singleuser/${sortValu}/${user?.email}`)
+        fetch(`https://toycra-server-side-mdraihanali.vercel.app/singleuser/${sortValu}/${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setToy(data)

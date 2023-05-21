@@ -19,7 +19,7 @@ function Navmenu() {
   return (
     <Navbar bg="light" expand="lg">
       <Container>
-        <Navbar.Brand href="#"><img width='120' src={logo} alt="" /></Navbar.Brand>
+        <Navbar.Brand href="/"><img width='120' src={logo} alt="" /></Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -36,6 +36,7 @@ function Navmenu() {
             }
 
             <NavLink className='nav-link' to='/alltoy'>All Toy</NavLink>
+            <NavLink className='nav-link' to='/blogs'>Blogs</NavLink>
 
 
 

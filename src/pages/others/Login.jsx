@@ -7,6 +7,11 @@ import { AuthContext } from '../../authprovidr/Authprovider';
 
 
 function Login() {
+    const handelTitle=()=>{
+        document.title = 'Login-Toycra'
+    }
+    handelTitle()
+
     const [errorM, setError]=useState('')
 const {googleLogin, login}=useContext(AuthContext)
 const location = useLocation()

@@ -3,6 +3,12 @@ import Table from 'react-bootstrap/Table';
 import { Link } from 'react-router-dom';
 
 function AllToy() {
+
+    const handelTitle=()=>{
+        document.title = 'All-Toy--Toycra'
+    }
+    handelTitle()
+
     const [toy, setToy] = useState([])
     useEffect(() => {
         fetch('https://toycra-server-side-mdraihanali.vercel.app/alltoy')
