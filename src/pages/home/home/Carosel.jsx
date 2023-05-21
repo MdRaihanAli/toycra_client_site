@@ -58,7 +58,7 @@ function Carosel() {
       </div>
       <div className='relative'>
         <div className='carosel-text row justify-content-center align-items-center'>
-          <div className="col-md-6 col-10 banerDiss text-light">
+          <div className="col-md-6 col-10 banerDiss text-light"  data-aos="zoom-in-down">
             <h2 className='fw-bold tomato_color'>"Rev Up Your Imagination with the Ultimate Car Toy Collection!"</h2>
             <p className='text-justify'>"Explore a world of excitement and adventure with our extensive range of car toys. From sleek sports cars to rugged off-roaders, we have the perfect vehicles to fuel your child's imagination. Our high-quality and durable toys are designed to provide endless <span className="d-none d-md-block">hours of fun and entertainment. Discover the joy of zooming down imaginary tracks, conquering off-road terrain, and embarking on thrilling racing adventures. Shop now and let your child's imagination hit the accelerator!</span>"</p>
             <div className='px-5'>

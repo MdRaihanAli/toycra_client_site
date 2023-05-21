@@ -16,7 +16,7 @@ function Galery() {
             <div className='container'>
                 <div className="row g-3">
                     {
-                        cardData.slice(0, 8).map(x => <div key={x._id} className="col-md-4 col-lg-3">
+                        cardData.slice(0, 8).map(x => <div key={x._id} className="col-md-4 col-lg-3" data-aos="fade-up">
                             <Card className="bg-ligth main_card text-datk">
                                 <Card.Img src={x.photo} alt="Card image" />
                                 <Card.ImgOverlay>

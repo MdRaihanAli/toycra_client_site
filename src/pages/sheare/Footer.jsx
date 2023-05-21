@@ -9,7 +9,7 @@ function Footer() {
             <div className='py-5'>
                 <div className="container">
                     <div className="row g-md-4">
-                        <div className="col-md-6 col-lg-3">
+                        <div className="col-md-6 col-lg-3" data-aos="fade-left">
                             <div><img width='120' src={logo} alt="" /></div>
                             
                             <hr />
@@ -18,7 +18,7 @@ function Footer() {
                             <div><Link className='nav-link'>Terms of Service</Link></div>
                             <div><Link className='nav-link'>Refund policy</Link></div>
                         </div>
-                        <div className="col-md-6 col-lg-3">
+                        <div className="col-md-6 col-lg-3" data-aos="fade-right">
                             <h3 className='text-bold'>Store Policies</h3>
                             <hr />
                             <div><Link className='nav-link'>Shipping & Returns Policy</Link></div>
@@ -26,7 +26,7 @@ function Footer() {
                             <div><Link className='nav-link'>Terms of Service</Link></div>
                             <div><Link className='nav-link'>Refund policy</Link></div>
                         </div>
-                        <div className="col-md-6 col-lg-3">
+                        <div className="col-md-6 col-lg-3" data-aos="fade-left">
                             <h3 className='text-bold'>Subscribe</h3>
                             <hr />
                             <div><p className='nav-link'>Get Exclusive Deals & More!</p></div>
@@ -35,7 +35,7 @@ function Footer() {
 
 
                         </div>
-                        <div className="col-md-6 col-lg-3">
+                        <div className="col-md-6 col-lg-3" data-aos="fade-right">
                             <h3 className='text-bold'>Follow us</h3>
                             <hr />
                             <div className="midea">

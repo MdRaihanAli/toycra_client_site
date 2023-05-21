@@ -32,7 +32,7 @@ function Categori1() {
 
   }
   return (
-    <div className='container'>
+    <div className='container' >
       <div className="row">
         <div className="col-md-2">
           <p onClick={() => selectCategoris('low')} className='bg_tomato'>Low Price</p>
@@ -42,7 +42,7 @@ function Categori1() {
         <div className="col-md-10">
           <div className="row g-3">
             {
-              forSot.slice(0, 4).map(data => <div key={data._id} className=" col-md-6">
+              forSot.slice(0, 4).map(data => <div key={data._id} className=" col-md-6" data-aos="fade-up">
                 <div className="card p-2">
                   <div className="row gap-0">
                     <div className="col-5">
