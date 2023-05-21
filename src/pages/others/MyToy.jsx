@@ -1,9 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react'
 import Table from 'react-bootstrap/Table';
-import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../../authprovidr/Authprovider';
-import { Button, Col, Form, Modal, Row } from 'react-bootstrap';
+import { Col, Form, Modal, Row } from 'react-bootstrap';
 
 function MyToy() {
     const { user } = useContext(AuthContext)
@@ -20,7 +19,7 @@ function MyToy() {
 
 
 
-    
+
     useEffect(() => {
         fetch(`https://toycra-server-side-mdraihanali.vercel.app/singleuser/${user?.email}`)
             .then(res => res.json())
@@ -52,7 +51,7 @@ function MyToy() {
                 })
                     .then(res => res.json())
                     .then(dat => {
-                        const filterToy = toy.filter(y=>y._id !== id)
+                        const filterToy = toy.filter(y => y._id !== id)
                         setToy(filterToy)
                     })
             }
@@ -61,32 +60,43 @@ function MyToy() {
 
     const updateHandel = (event) => {
         event.preventDefault()
-        const form = event.target 
+        const form = event.target
         const id = form.id.value
         const price = form.price.value
         const quantity = form.quantity.value
         const detail = form.detail.value
-        const updateUser={price, quantity, detail}
+        const updateUser = { price, quantity, detail }
         // console.log(id, price, quantity, detail);
 
-        fetch(`https://toycra-server-side-mdraihanali.vercel.app/update/${id}`,{
+        fetch(`https://toycra-server-side-mdraihanali.vercel.app/update/${id}`, {
             method: 'PATCH',
-            headers:{'content-type':'application/json'},
+            headers: { 'content-type': 'application/json' },
             body: JSON.stringify(updateUser)
         })
-        .then(res=>res.json())
-        .then(fol=>{
-            Swal.fire({
-                position: 'top-center',
-                icon: 'success',
-                title: 'Your Item Updated',
-                showConfirmButton: false,
-                timer: 1500
-              })
-            console.log(fol);
-            closeModal()
-        })
+            .then(res => res.json())
+            .then(fol => {
+                Swal.fire({
+                    position: 'top-center',
+                    icon: 'success',
+                    title: 'Your Item Updated',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+                console.log(fol);
+                closeModal()
+            })
     }
+
+    const handelSort = (event) => {
+        const sortValu = event.target.value
+        fetch(`http://localhost:5000/singleuser/${sortValu}/${user?.email}`)
+            .then(res => res.json())
+            .then(data => {
+                setToy(data)
+               
+            })
+    }
+
     return (
         <div className="bg_color pb-4">
             <h3 className="text-bold text-center py-4"> My <span className="tomato_color">Toys</span></h3>
@@ -100,7 +110,13 @@ function MyToy() {
                             <th>Toy Name</th>
 
                             <th>Sub-category</th>
-                            <th>Price</th>
+                            <th>
+                                <select className='form-control' onChange={handelSort} name="SortPrice" id="">
+                                    <option value=""> <span className='text-bold'>Sort Price</span> </option>
+                                    <option value="ascending">ascending </option>
+                                    <option value="descending">descending</option>
+                                </select>
+                            </th>
                             <th>Quantity</th>
                             <th>Details </th>
                             <th>Delete </th>
@@ -167,11 +183,11 @@ function MyToy() {
                                 />
                             </Form.Group>
                             <input className='d-none' name='id' type="text" value={modalData?._id} />
-                            <button  className='btn bg_tomato' type="submit ms-auto">Submit form</button>
+                            <button className='btn bg_tomato' type="submit ms-auto">Submit form</button>
                         </Form>
-                        
+
                     </Modal.Body>
-                    
+
                 </Modal>
             </div>
 
